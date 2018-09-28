@@ -1,0 +1,15 @@
+# Copy your file from the previous exercise (Average numbers) and modify it so that it handles the following
+# exceptions:
+# It should handle any IOError exceptions that are raised when the file is opened and data is read from it.
+# It should handle any ValueError exceptions that are raised when the items that are read from the file are
+# converted to a number.
+
+def main():
+    number_file = open('number2.txt', 'w')
+    number_file.close()
+    print("There was non-numeric data in the file.")
+    print("Processing of the file has stopped.")
+    print("There were", number, "numbers.")
+
+
+main()
