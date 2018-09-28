@@ -1,12 +1,16 @@
 def main():
-    #open a file named names.txt.
-    infile = open('names.txt', 'r')
-    total =
+    # open a file named names.txt.
 
-    file_contents = infile.read()
-    infile.close()
+    infile_variable = open('names.txt', 'r')
 
-    print("There were", total, "names in the files.")
+# names_data = open('names.txt', 'r')
+
+    line1 = infile_variable.readline()
+    line2 = infile_variable.readline()
+    line3 = infile_variable.readline()
+    print(line1 + line2 + line3)
+
+    infile_variable.close()
 
 
 main()
