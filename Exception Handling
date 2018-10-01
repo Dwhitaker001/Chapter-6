@@ -4,12 +4,31 @@
 # It should handle any ValueError exceptions that are raised when the items that are read from the file are
 # converted to a number.
 
-def main():
-    number_file = open('number2.txt', 'w')
-    number_file.close()
-    print("There was non-numeric data in the file.")
-    print("Processing of the file has stopped.")
-    print("There were", number, "numbers.")
 
+def main():
+
+    counter = 0
+    total = 0
+    average = 0
+    try:
+        number_file = open('numbers2.txt', 'r')
+        for line in number_file:
+            print(line.rstrip())
+            counter += 1
+            all_number = float(line)
+            total += all_number
+            average = total / counter
+
+        number_file.close()
+    except IOError:
+        print("This file does not exist")
+
+    except ValueError:
+        print("There was non-numeric data in the file.")
+        print("Processing of the file has stopped.")
+
+    print("There were", counter, "numbers.")
+    print("The total of all numbers was: ", total)
+    print("The average of the number was: ", average)
 
 main()
